@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>添加信息页面</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>添加信息</h1>
+<br/><br/>
+<div class="with:80%">
+    <form class="form-horizontal"   th:action="@{/add}" method="post">
+
+        <!-- 送修日期 repair_date-->
+        <div class="form-group">
+            <label for="repair_date" class="col-sm-2 control-label">送修日期</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="repair_date"  id="repair_date" placeholder="例如: 2021-03-15(根据实际情况填写)"/>
+            </div>
+        </div>
+
+        <!-- 当前时间 local_time-->
+        <div class="form-group">
+            <label for="local_time" class="col-sm-2 control-label" >当前时间</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="local_time" id="local_time" placeholder="例如: 08:30(24小时制)"/>
+            </div>
+        </div>
+
+        <!-- 所在部门 department-->
+        <div class="form-group">
+            <label for="department" class="col-sm-2 control-label">所在部门</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="department"  id="department" placeholder="例如: 生物IQC | 车载SMT | 后端设备部 | 试产设备部 | 其他(根据实际情况自行填写)"/>
+            </div>
+        </div>
+
+        <!-- 送修人 repair_user-->
+        <div class="form-group">
+            <label for="repair_user" class="col-sm-2 control-label">送修人</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="repair_user"  id="repair_user" placeholder="例如：张三"/>
+            </div>
+        </div>
+
+        <!-- 送修人电话 repair_phone-->
+        <div class="form-group">
+            <label for="repair_phone" class="col-sm-2 control-label">送修人电话</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="repair_phone"  id="repair_phone" placeholder="例如: 本人联系电话 或者 座机号"/>
+            </div>
+        </div>
+
+        <!-- 送修物品 repair_goods-->
+        <div class="form-group">
+            <label for="repair_goods"   class="col-sm-2 control-label">送修物品</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="repair_goods"  id="repair_goods" placeholder="例如: 笔记本电脑 | 台式主机 | 其他(根据实际情况自行填写)"/>
+            </div>
+        </div>
+
+        <!-- 送修数量 repair_number-->
+        <div class="form-group">
+            <label for="repair_number"   class="col-sm-2 control-label">送修数量</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="repair_number"  id="repair_number" placeholder="例如: 1"/>
+            </div>
+        </div>
+
+        <!-- 故障问题 problem-->
+        <div class="form-group">
+            <label for="problem"   class="col-sm-2 control-label">故障问题</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="problem"  id="problem" placeholder="例如: 蓝屏 | 无法开机 | 电脑卡顿严重 | 安装CAD | 其他(根据实际情况自行填写)"/>
+            </div>
+        </div>
+
+        <!-- 送修备注 remarks-->
+        <div class="form-group">
+            <label for="remarks"   class="col-sm-2 control-label">送修备注</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="remarks"  id="remarks" placeholder="例如: 主机 | 备注 | 其他(根据实际情况自行填写)"/>
+            </div>
+        </div>
+
+        <!-- 领取人 receive_user-->
+        <div class="form-group">
+            <label for="receive_user" class="col-sm-2 control-label">领取人</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="receive_user"  id="receive_user" placeholder="例如: 李四"/>
+            </div>
+        </div>
+
+        <!-- 领取人电话 receive_phone-->
+        <div class="form-group">
+            <label for="receive_phone"  class="col-sm-2 control-label">领取人电话</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="receive_phone"  id="receive_phone" placeholder="例如: 本人联系电话 或者 座机号"/>
+            </div>
+        </div>
+
+        <!-- 领取日期 receive_date-->
+        <div class="form-group">
+            <label for="receive_date"  class="col-sm-2 control-label">领取日期</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="receive_date"  id="receive_date" placeholder="例如：2021-06-15(根据实际情况填写)"/>
+            </div>
+        </div>
+
+        <!-- 领取备注 remarks2-->
+        <div class="form-group">
+            <label for="remarks2"   class="col-sm-2 control-label">领取备注</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="remarks2"  id="remarks2" placeholder="例如：没有可以空着不填写"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="提交" class="btn btn-info" />
+                &nbsp; &nbsp; &nbsp;
+                <input type="reset" value="重置" class="btn btn-info" />
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>

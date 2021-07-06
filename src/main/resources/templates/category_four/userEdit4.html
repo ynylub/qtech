@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>修改信息界面</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>修改信息</h1>
+
+<br/><br/>
+<div class="with:80%">
+    <form class="form-horizontal"   th:action="@{/edit4}" th:object="${user}"  method="post">
+        <input type="hidden" name="id" th:value="*{id}" />
+        
+        <!-- 登记日期 repair_date-->
+        <div class="form-group">
+            <label for="repair_date" class="col-sm-2 control-label">登记日期</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="repair_date"  id="repair_date" th:value="*{repair_date}"/>
+            </div>
+        </div>
+
+        <!-- 打印机编号 printer_number-->
+        <div class="form-group">
+            <label for="printer_number" class="col-sm-2 control-label" >用户名</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="printer_number" id="printer_number" th:value="*{printer_number}"/>
+            </div>
+        </div>
+
+        <!-- 打印机型号 printer_model-->
+        <div class="form-group">
+            <label for="printer_model" class="col-sm-2 control-label">电脑型号</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="printer_model"  id="printer_model" th:value="*{printer_model}"/>
+            </div>
+        </div>
+
+        <!-- 异常现象 problem-->
+        <div class="form-group">
+            <label for="problem" class="col-sm-2 control-label">SN#码</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="problem"  id="problem" th:value="*{problem}"/>
+            </div>
+        </div>
+
+        <!-- 更换配件 change_parts-->
+        <div class="form-group">
+            <label for="change_parts" class="col-sm-2 control-label">安装人员</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="change_parts"  id="change_parts" th:value="*{change_parts}"/>
+            </div>
+        </div>
+
+        <!-- 维修人员 repair_user-->
+        <div class="form-group">
+            <label for="repair_user"   class="col-sm-2 control-label">打印机权限是否开通</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="repair_user"  id="repair_user" th:value="*{repair_user}"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="提交" class="btn btn-info" />
+                &nbsp; &nbsp; &nbsp;
+                <a href="/toAdd4" th:href="@{/list4}" class="btn btn-info">返回上一级</a>
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>

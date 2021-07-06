@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>IT 打印机送修&领取</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>IT 打印机送修&领取</h1>
+<br/>
+<h5>如果第一次来运维部没有处理好自己的事情，领取人 | 领取电话 | 领取日期 | 领取备注 可以先不填写，等待维修成功后可补充完此条记录</h5>
+<h5>登记时，请在打印机上贴好标签(包含：部门，座机，故障问题)，以下填空都为必填！</h5>
+<h5>(如果不填，少填出现任何问题后果自负，修好的打印机存放期限为 14天，如超时未取，丢失后果自负)</h5>
+<br/>
+
+     <!-- <form th:action="@{/findUserById}" method="post">
+        <input placeholder="输入要查找的 id" class="find" name="id"/>
+        <button type="submit">查找</button>
+    </form -->
+
+<!--    <form action="/findById" method="post" style="margin-left: 400px">-->
+<!--        <input type="text" placeholder="输入要查找的 id" name="id"/>-->
+<!--        <input type="submit" value="查询"/>-->
+<!--    </form>-->
+
+<!--th:action="@{/add}" method="post"-->
+
+    <a href="/toAdd2" th:href="@{/toAdd2}" class="btn btn-primary">添加新记录</a>
+    <a href="/list" style="margin-left: 740px" class="btn btn-primary">跳转到 电脑送修&领取</a>
+    <a href="/download2?title=打印机送修领取-记录表" style="margin-left: 10px" class="btn btn-primary">导出 Excel</a>
+
+<!--<div class="form-group">-->
+<!--    <div class="col-sm-2 control-label">-->
+<!--        <a href="/toAdd" th:href="@{/toAdd}" class="btn btn-info">添加新记录</a>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="with:80%">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#序列号</th>
+            <th>送修日期</th>
+            <th>当前时间</th>
+            <th>所在部门</th>
+            <th>送修人</th>
+            <th>送修人电话</th>
+            <th>送修物品</th>
+            <th>送修数量</th>
+            <th>故障问题</th>
+            <th>送修备注</th>
+            <th><s>领取人</s></th>
+            <th><s>领取电话</s></th>
+            <th><s>领取日期</s></th>
+            <th><s>领取备注</s></th>
+            <th>修改</th>
+            <!-- <th>删除</th> -->
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr  th:each="user : ${users}">
+            <th scope="row" th:text="${user.id}"></th>
+            <td th:text="${user.repair_date}"></td>
+            <td th:text="${user.local_time}"></td>
+            <td th:text="${user.department}"></td>
+            <td th:text="${user.repair_user}"></td>
+            <td th:text="${user.repair_phone}"></td>
+            <td th:text="${user.repair_goods}"></td>
+            <td th:text="${user.repair_number}"></td>
+            <td th:text="${user.problem}"></td>
+            <td th:text="${user.remarks}"></td>
+            <td th:text="${user.receive_user}"></td>
+            <td th:text="${user.receive_phone}"></td>
+            <td th:text="${user.receive_date}"></td>
+            <td th:text="${user.remarks2}"></td>
+            <td><a th:href="@{/toEdit2(id=${user.id})}">修改</a></td>
+            <!-- <td><a th:href="@{/delete(id=${user.id})}">删除</a></td> -->
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+
+<div class="modal-footer no-margin-top">
+    <ul class="pagination pull-right no-margin">
+
+        <!-- 首页 -->
+        <li>
+            <a th:href="'/list2?pageNum=0'">首页</a>
+        </li>
+
+        <!-- 上一页 -->
+        <li th:if="${users.hasPrevious()}">
+            <a th:href="'/list2?pageNum=' + ${users.previousPageable().getPageNumber()}" th:text="上一页"></a>
+        </li>
+
+        <!-- 中间页 -->
+        <li th:each="pageNum:${#numbers.sequence(0, users.getTotalPages() - 1)}">
+            <a th:href="'/list2?pageNum=' + ${pageNum}" th:text="${pageNum + 1}" th:if="${pageNum ne users.pageable.getPageNumber()}"></a>
+            <a th:href="'/list2?pageNum=' + ${pageNum}" th:text="${pageNum + 1}" th:if="${pageNum eq users.pageable.getPageNumber()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
+        </li>
+
+        <!-- 下一页 -->
+        <li th:if="${users.hasNext()}">
+            <a th:href="'/list2?pageNum=' + ${users.nextPageable().getPageNumber()}" th:text="下一页"></a>
+        </li>
+
+        <!-- 尾页 -->
+        <li>
+            <a th:href="'/list2?pageNum=' + ${users.getTotalPages() - 1}">尾页</a>
+        </li>
+
+    </ul>
+</div>
+</body>
+
+</html>

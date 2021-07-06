@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>IT 送修登记平台</title>
+  <!--  <link rel="stylesheet" type="text/css" href="css/style.css">   html 中引入js-->
+  <link type="text/css" rel="stylesheet" th:href="@{/css/style.css}" ></link>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+  <link rel="stylesheet" th:href="@{/css/jq22.css}"></link>
+</head>
+<body>
+
+<!-- 滚动字幕 -->
+<div class="box">
+  <div class="t_news">
+    <b>最新播报:</b>
+    <ul class="news_li">
+      <li><a href="#" >IT技术服务部&nbsp;欢迎您的到来~</a></li>
+<!--      <li><a href="#" style="color: #ef5b9c">闫铁军未婚有房，有意私聊~</a></li>-->
+      <li><a href="#" >如有疑问，可以联系管理员~</a></li>
+    </ul>
+    <ul class="swap"></ul>
+  </div>
+</div>
+
+<header>
+  <div class="bg">
+    <canvas id="display"></canvas>
+    <div id="blachole"></div>
+    <div class="login-box">
+<!--      &#9829; 爱心-->
+      <h2> 送修登记平台 </h2>
+      <form>
+
+        <a href="/list">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          电脑送修&领取
+        </a>
+
+        &nbsp;&nbsp;&nbsp;
+
+        <a href="/list2">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          打印机送修&领取
+        </a>
+
+        <a href="/user/login" target="_blank" style="margin-left: 70px">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          IT 日常管理登记(管理员)
+        </a>
+      </form>
+    </div>
+  </div>
+</header>
+<!--target="_blank" 在新窗口中打开被链接文档-->
+<!--target="_self"  在被点击时的同一框架中打开被链接文档(默认)-->
+<!--<a href="/index2" target="_blank" ><p align="center">IT 日常管理登记</p></a>-->
+<p align="center"><b>&copy;本网站由&nbsp;IT技术服务部开发并维护 Version1.0</b></p>
+<p align="center"><b>&#9829;&nbsp;如有疑问和建议，均可飞书联系管理员 薛宇森 or 奥二宝&nbsp;&#9829;</b></p>
+<p align="center"><b>本网站已经运行 &nbsp;<span id="sitetime"  style="color: #d71345;"></span></b></p>
+</body>
+<!--  html 中引入 js的写法-->
+<!--  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
+<!--  <script type="text/javascript" src="js/constellation.js"></script>-->
+
+<script type="text/javascript" th:src="@{http://www.jq22.com/jquery/1.8.3/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{http://www.jq22.com/jquery/jquery-1.10.2.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.1.12.4.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/constellation.js}"></script>
+<script type="text/javascript" th:src="@{/js/runtime.js}"></script>
+<script type="text/javascript" th:src="@{/js/jq22.js}"></script>
+</html>

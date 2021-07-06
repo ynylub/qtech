@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>添加信息页面</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>添加信息</h1>
+<br/><br/>
+<div class="with:80%">
+    <form class="form-horizontal"  th:action="@{/add6}" method="post">
+
+        <!-- 打印机编号 printer_number-->
+        <div class="form-group">
+            <label for="printer_number" class="col-sm-2 control-label">打印机编号</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="printer_number"  id="printer_number" placeholder="例如: 需要查看实际电脑信息"/>
+            </div>
+        </div>
+
+        <!-- 打印机品牌 printer_brand-->
+        <div class="form-group">
+            <label for="printer_brand" class="col-sm-2 control-label" >打印机品牌</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="printer_brand" id="printer_brand" placeholder="例如: 惠普打印机 | 斑马打印机 | 爱普生打印机 | 碳粉打印机 | 其他(根据实际情况自行填写)"/>
+            </div>
+        </div>
+
+        <!-- 打印机型号 printer_model-->
+        <div class="form-group">
+            <label for="printer_model" class="col-sm-2 control-label">打印机型号</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="printer_model"  id="printer_model" placeholder="例如: HP452白色 | HP451黑色 | ZT230 | LQ-300KH | 柯美打印机 | LQ-690K | 其他(根据实际情况自行填写)"/>
+            </div>
+        </div>
+
+        <!-- 使用部门 department-->
+        <div class="form-group">
+            <label for="department" class="col-sm-2 control-label">使用部门</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="department"  id="department" placeholder="例如：九区 | 车载 | 自动化 | 仓库 | SMT |其他(根据实际情况自行填写)"/>
+            </div>
+        </div>
+
+        <!-- 使用区域 user_area-->
+        <div class="form-group">
+            <label for="user_area" class="col-sm-2 control-label">使用区域</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="user_area"  id="user_area" placeholder="例如: 包装办公区 | 生产办公区 | 备料站 | 自动化办公室 | SMT车间 | 原料仓库 | 杂项仓库 | 其他(根据实际情况自行填写)"/>
+            </div>
+        </div>
+
+        <!-- 领取数量 user_number-->
+        <div class="form-group">
+            <label for="user_number"   class="col-sm-2 control-label">领取数量</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="user_number"  id="user_number" placeholder="根据实际领用情况填写 "/>
+            </div>
+        </div>
+
+        <!-- 负责人 user_name-->
+        <div class="form-group">
+            <label for="user_name"   class="col-sm-2 control-label">负责人</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="user_name"  id="user_name" placeholder="例如：张三 "/>
+            </div>
+        </div>
+
+        <!-- 负责人电话 user_phone-->
+        <div class="form-group">
+            <label for="user_phone"   class="col-sm-2 control-label">负责人电话</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="user_phone"  id="user_phone" placeholder="手机号码 或者 座机号 "/>
+            </div>
+        </div>
+
+        <!-- 备注 remark-->
+        <div class="form-group">
+            <label for="remark"   class="col-sm-2 control-label">备注</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="remark"  id="remark" placeholder="没有可以空着不填写"/>
+            </div>
+        </div>
+
+        <!-- 生产日期 production_date-->
+        <div class="form-group">
+            <label for="production_date"   class="col-sm-2 control-label">生产日期</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="production_date"  id="production_date" placeholder="例如：2021-06-15(根据实际情况填写)"/>
+            </div>
+        </div>
+
+        <!-- 领取日期 receive_date-->
+        <div class="form-group">
+            <label for="receive_date"   class="col-sm-2 control-label">领取日期</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="receive_date"  id="receive_date" placeholder="例如：2021-06-15(根据实际情况填写)"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="提交" class="btn btn-info" />
+                &nbsp; &nbsp; &nbsp;
+                <input type="reset" value="重置" class="btn btn-info" />
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>

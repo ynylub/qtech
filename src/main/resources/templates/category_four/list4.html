@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>打印机维修-更换部件登记</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>IT 打印机维修-更换部件登记</h1>
+<br/>
+<h5>如有疑问，请联系管理员 奥二宝</h5>
+<br/>
+
+     <!-- <form th:action="@{/findUserById}" method="post">
+        <input placeholder="输入要查找的 id" class="find" name="id"/>
+        <button type="submit">查找</button>
+    </form -->
+
+<!--    <form action="/findById" method="post" style="margin-left: 400px">-->
+<!--        <input type="text" placeholder="输入要查找的 id" name="id"/>-->
+<!--        <input type="submit" value="查询"/>-->
+<!--    </form>-->
+
+<!--th:action="@{/add}" method="post"-->
+
+    <a href="/toAdd4" th:href="@{/toAdd4}" class="btn btn-primary">添加新记录</a>
+    <a href="/download4?title=打印机维修-更换部件登记表" style="margin-left: 930px" class="btn btn-primary">导出 Excel</a>
+
+<!--<div class="form-group">-->
+<!--    <div class="col-sm-2 control-label">-->
+<!--        <a href="/toAdd" th:href="@{/toAdd}" class="btn btn-info">添加新记录</a>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="with:80%">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#序列号</th>
+            <th>登记日期</th>
+            <th>打印机编号</th>
+            <th>打印机型号</th>
+            <th>异常形象</th>
+            <th>更换配件</th>
+            <th>维修人员</th>
+            <th>修改</th>
+            <!-- <th>删除</th> -->
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr  th:each="user : ${users}">
+            <th scope="row" th:text="${user.id}"></th>
+            <td th:text="${user.repair_date}"></td>
+            <td th:text="${user.printer_number}"></td>
+            <td th:text="${user.printer_model}"></td>
+            <td th:text="${user.problem}"></td>
+            <td th:text="${user.change_parts}"></td>
+            <td th:text="${user.repair_user}"></td>
+            <td><a th:href="@{/toEdit4(id=${user.id})}">修改</a></td>
+            <!-- <td><a th:href="@{/delete(id=${user.id})}">删除</a></td> -->
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+
+<div class="modal-footer no-margin-top">
+    <ul class="pagination pull-right no-margin">
+
+        <!-- 首页 -->
+        <li>
+            <a th:href="'/list4?pageNum=0'">首页</a>
+        </li>
+
+        <!-- 上一页 -->
+        <li th:if="${users.hasPrevious()}">
+            <a th:href="'/list4?pageNum=' + ${users.previousPageable().getPageNumber()}" th:text="上一页"></a>
+        </li>
+
+        <!-- 中间页 -->
+        <li th:each="pageNum:${#numbers.sequence(0, users.getTotalPages() - 1)}">
+            <a th:href="'/list4?pageNum=' + ${pageNum}" th:text="${pageNum + 1}" th:if="${pageNum ne users.pageable.getPageNumber()}"></a>
+            <a th:href="'/list4?pageNum=' + ${pageNum}" th:text="${pageNum + 1}" th:if="${pageNum eq users.pageable.getPageNumber()}" th:style="'font-weight:bold;background: #6faed9;'"></a>
+        </li>
+
+        <!-- 下一页 -->
+        <li th:if="${users.hasNext()}">
+            <a th:href="'/list4?pageNum=' + ${users.nextPageable().getPageNumber()}" th:text="下一页"></a>
+        </li>
+
+        <!-- 尾页 -->
+        <li>
+            <a th:href="'/list4?pageNum=' + ${users.getTotalPages() - 1}">尾页</a>
+        </li>
+
+    </ul>
+</div>
+</body>
+
+</html>

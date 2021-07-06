@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>送修领取平台</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/jq22_owl.css}"></link>
+</head>
+<body>
+<!-- begin -->
+<h1 align="center">送修领取平台--首页登录</h1>
+<div id="login">
+    <div class="wrapper">
+        <div class="login">
+            <form action="/index_doLogin" method="post" class="container offset1 loginform" accept-charset="utf-8">
+                <div id="owl-login" class="">
+                    <div class="hand"></div>
+                    <div class="hand hand-r"></div>
+                    <div class="arms">
+                        <div class="arm"></div>
+                        <div class="arm arm-r"></div>
+                    </div>
+                </div>
+                <div class="pad">
+                    <input type="hidden" name="_csrf" value="9IAtUxV2CatyxHiK2LxzOsT6wtBE6h8BpzOmk=">
+                    <div class="control-group">
+                        <div class="controls">
+                            <label for="username" class="control-label fa fa-envelope"></label>
+                            <input id="username" type="text" name="username" placeholder="用户名" tabindex="1" autofocus="autofocus" class="form-control input-medium">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                    <div class="control-group">
+                        <div class="controls">
+                            <label for="password" class="control-label fa fa-asterisk"></label>
+                            <input id="password" type="password" name="password" placeholder="用户密码" tabindex="2" class="form-control input-medium">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <a href="#" tabindex="5" class="btn pull-left btn-link text-muted">注册管理员账户请联系 奥二宝</a>
+                    <!-- <a href="#" tabindex="6" class="btn btn-link text-muted">Sign Up</a> -->
+                    <button th:type="submit" tabindex="4" class="btn btn-primary">登录</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- end -->
+
+</body>
+<script type="text/javascript" th:src="@{/js/jquery.min_owl.js}"></script>
+<script type="text/javascript" th:src="@{/js/jq22_owl.js}"></script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>错误页面</title>
+    <link th:href="@{/css/404.css}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div class="mianBox">
+    <img src="images/yun0.png" alt="" class="yun yun0" />
+    <img src="images/yun1.png" alt="" class="yun yun1" />
+    <img src="images/yun2.png" alt="" class="yun yun2" />
+    <img src="images/bird.png" alt="" class="bird" />
+    <img src="images/san.png" alt="" class="san" />
+    <div class="tipInfo">
+        <div class="in">
+            <div class="textThis">
+                <p th:text="${msg}"></p>
+                <h2>出错啦~ 404！</h2>
+                <!-- <p><span>页面自动<a id="href" href="">跳转</a></span><span>等待<b id="wait">6</b>秒</span></p>
+                <script type="text/javascript">                            (function() {
+                        var wait = document.getElementById('wait'), href = document.getElementById('href').href;
+                        var interval = setInterval(function() {
+                            var time = --wait.innerHTML;
+                            if (time <= 0) {
+
+                                clearInterval(interval);
+                                //location.href = href;
+                                alert("开始跳转提示");
+                            }
+                            ;
+                        }, 1000);
+                    })();
+                </script> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script th:src="@{http://www.jq22.com/jquery/jquery-1.10.2.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.1.7.2.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/error.js}"></script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>修改信息界面</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body class="container">
+<br/>
+<h1>修改信息</h1>
+
+<br/><br/>
+<div class="with:80%">
+    <form class="form-horizontal"   th:action="@{/edit5}" th:object="${user}"  method="post">
+        <input type="hidden" name="id" th:value="*{id}" />
+        
+        <!-- 打印机型号 printer_model-->
+        <div class="form-group">
+            <label for="printer_model" class="col-sm-2 control-label">打印机型号</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="printer_model"  id="printer_model" th:value="*{printer_model}"/>
+            </div>
+        </div>
+
+        <!-- 打印机编码 printer_number-->
+        <div class="form-group">
+            <label for="printer_number" class="col-sm-2 control-label" >打印机编码</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="printer_number" id="printer_number" th:value="*{printer_number}"/>
+            </div>
+        </div>
+
+        <!-- 登记日期 register_date-->
+        <div class="form-group">
+            <label for="register_date" class="col-sm-2 control-label">登记日期</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="register_date"  id="register_date" th:value="*{register_date}"/>
+            </div>
+        </div>
+
+        <!-- 送修人员 register_user-->
+        <div class="form-group">
+            <label for="register_user" class="col-sm-2 control-label">送修人员</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="register_user"  id="register_user" th:value="*{register_user}"/>
+            </div>
+        </div>
+
+        <!-- 报废原因 reasen-->
+        <div class="form-group">
+            <label for="reasen" class="col-sm-2 control-label">报废原因</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="reasen"  id="reasen" th:value="*{reasen}"/>
+            </div>
+        </div>
+
+        <!-- 备注 remark-->
+        <div class="form-group">
+            <label for="remark"   class="col-sm-2 control-label">备注</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="remark"  id="remark" th:value="*{remark}"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" value="提交" class="btn btn-info" />
+                &nbsp; &nbsp; &nbsp;
+                <a href="/toAdd5" th:href="@{/list5}" class="btn btn-info">返回上一级</a>
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>
